@@ -13,12 +13,12 @@ class AdvancedConfig {
     const DB_PASS = '';
     const DB_CHARSET = 'utf8mb4';
     
-    // Advanced Security
-    define('JWT_SECRET', 'neuravult_advanced_secret_2024_' . uniqid());
-    const JWT_ALGORITHM = 'HS256';
-    const ENCRYPTION_KEY = 'neuravult_encryption_key_2024';
-    const CSRF_SECRET = 'neuravult_csrf_protection_2024';
-    
+   // Advanced Security
+public static $JWT_SECRET = 'neuravult_advanced_secret_2024_' ; // fixed secret
+const JWT_ALGORITHM = 'HS256';
+const ENCRYPTION_KEY = 'neuravult_encryption_key_2024';
+const CSRF_SECRET = 'neuravult_csrf_protection_2024';
+   
     // Performance & Caching
     const REDIS_ENABLED = true;
     const REDIS_HOST = '127.0.0.1';
