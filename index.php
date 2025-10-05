@@ -14,7 +14,7 @@ class AdvancedConfig {
     const DB_CHARSET = 'utf8mb4';
     
     // Advanced Security
-    const JWT_SECRET = 'neuravult_advanced_secret_2024_' . uniqid();
+    define('JWT_SECRET', 'neuravult_advanced_secret_2024_' . uniqid());
     const JWT_ALGORITHM = 'HS256';
     const ENCRYPTION_KEY = 'neuravult_encryption_key_2024';
     const CSRF_SECRET = 'neuravult_csrf_protection_2024';
