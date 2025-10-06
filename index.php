@@ -13,12 +13,12 @@ class AdvancedConfig {
     const DB_PASS = '';
     const DB_CHARSET = 'utf8mb4';
     
-   // Advanced Security
-public static $JWT_SECRET = 'neuravult_advanced_secret_2024_' ; // fixed secret
-const JWT_ALGORITHM = 'HS256';
-const ENCRYPTION_KEY = 'neuravult_encryption_key_2024';
-const CSRF_SECRET = 'neuravult_csrf_protection_2024';
-   
+    // Advanced Security
+    const JWT_SECRET = 'neuravult_advanced_secret_2024_' . uniqid();
+    const JWT_ALGORITHM = 'HS256';
+    const ENCRYPTION_KEY = 'neuravult_encryption_key_2024';
+    const CSRF_SECRET = 'neuravult_csrf_protection_2024';
+    
     // Performance & Caching
     const REDIS_ENABLED = true;
     const REDIS_HOST = '127.0.0.1';
@@ -1868,7 +1868,7 @@ class AdvancedToolsController {
         ];
 
         $page = max(1, intval($_GET['page'] ?? 1));
-        $limit = min(100, max(1, intval($_GET['limit'] ?? 12)));
+        $limit = min(100, max(1, intval($_GET['limit'] ?? 12));
 
         $result = $this->toolModel->getAll($filters, $page, $limit);
         AdvancedResponse::paginated($result['tools'], $result['total'], $page, $limit);
@@ -1960,7 +1960,7 @@ class AdvancedToolsController {
         ];
 
         $page = max(1, intval($_GET['page'] ?? 1));
-        $limit = min(50, max(1, intval($_GET['limit'] ?? 12)));
+        $limit = min(50, max(1, intval($_GET['limit'] ?? 12));
 
         $result = $this->categoryModel->getWithTools($slug, $filters, $page, $limit);
         
@@ -2279,7 +2279,7 @@ class AdvancedCategory {
     }
 
     public function getWithTools($slug, $filters = [], $page = 1, $limit = 12) {
-        $cacheKey = "category_tools_{$slug}_" . md5(serialize($filters) . "_page{$page}_limit{$limit}");
+        $cacheKey = "category_tools_{$slug}_" . md5(serialize($filters) . "_page{$page}_limit{$limit}";
         $cached = $this->db->cacheGet($cacheKey);
         
         if ($cached !== false) {
