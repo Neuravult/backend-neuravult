@@ -2279,7 +2279,7 @@ class AdvancedCategory {
     }
 
     public function getWithTools($slug, $filters = [], $page = 1, $limit = 12) {
-        $cacheKey = "category_tools_{$slug}_" . md5(serialize($filters) . "_page{$page}_limit{$limit}";
+        $cacheKey = "category_tools_{$slug}_" . md5(serialize($filters) . "_page{$page}_limit{$limit}");
         $cached = $this->db->cacheGet($cacheKey);
         
         if ($cached !== false) {
