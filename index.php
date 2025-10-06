@@ -1960,7 +1960,7 @@ class AdvancedToolsController {
         ];
 
         $page = max(1, intval($_GET['page'] ?? 1));
-        $limit = min(50, max(1, intval($_GET['limit'] ?? 12));
+        $limit = min(50, max(1, intval($_GET['limit'] ?? 12)));
 
         $result = $this->categoryModel->getWithTools($slug, $filters, $page, $limit);
         
