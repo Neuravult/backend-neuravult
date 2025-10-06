@@ -1868,7 +1868,7 @@ class AdvancedToolsController {
         ];
 
         $page = max(1, intval($_GET['page'] ?? 1));
-        $limit = min(100, max(1, intval($_GET['limit'] ?? 12));
+        $limit = min(100, max(1, intval($_GET['limit'] ?? 12)));
 
         $result = $this->toolModel->getAll($filters, $page, $limit);
         AdvancedResponse::paginated($result['tools'], $result['total'], $page, $limit);
